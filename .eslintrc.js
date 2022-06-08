@@ -8,4 +8,8 @@ module.exports = {
   env: {
     node: true, // Enable Node.js global variables
   },
+  rules: {
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-var-requires": "off",
+  },
 };

@@ -4,7 +4,8 @@
     "main": "main.ts",
     "license": "MIT",
     "scripts": {
-        "build": "npx tsc",
+        "lint": "npx eslint . --fix",
+        "build": "rm -rf dist && npx tsc && npx eslint . --fix",
         "start": "node dist/main.js",
         "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/main.js\""
     },
