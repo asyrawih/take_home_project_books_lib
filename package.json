@@ -4,7 +4,7 @@
     "main": "start.ts",
     "license": "MIT",
     "scripts": {
-        "test": "npx jest --watch --coverage",
+        "test": "npx jest --watchAll --coverage",
         "lint": "npx eslint . --fix",
         "build": "rm -rf dist && npx tsc && npx eslint . --fix",
         "start": "node dist/start.js",
