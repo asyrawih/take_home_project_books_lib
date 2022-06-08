@@ -29,7 +29,7 @@ describe("Can Orders The Books Must", () => {
       books: [
         {
           title: "Importance of Being Earnest",
-          author: [],
+          authors: [],
           subject: [
             "British and irish drama (dramatic works by one author)",
             "English life",
