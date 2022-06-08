@@ -1,12 +1,13 @@
-import axios from "axios";
 import { Request, Response } from "express";
+import { BookOrder } from "../model/Book";
 import { GetBook } from "../services/Getbooks";
+import { orderBooks } from "../services/OrderBook";
 
 /**
  *  Get Books
  */
 export const book = async (req: Request, res: Response) => {
-  const getBooks = await GetBook(req, res);
+  const getBooks = await GetBook();
   // Remap Books
   const books = getBooks.works.map((book) => {
     return {
@@ -28,6 +29,24 @@ export const book = async (req: Request, res: Response) => {
  */
 export const orderBook = async (req: Request, res: Response) => {
   // Will Be Contain Mocking order Book
-  const mockOrderData = [];
-  return res.json(req.body);
+  const orderBook: BookOrder = {
+    customer: req.body.customer,
+    books: [],
+    schedule_pickup: new Date(),
+  };
+
+  const orders = orderBooks(req.body);
+
+  orders.forEach((order) => {
+    orderBook.books.push({
+      key: order.key,
+      title: order.title,
+      cover_id: order.cover_id,
+      author: order.author,
+      subject: order.subject,
+      cover_edition_key: order.cover_edition_key,
+    });
+  });
+
+  return res.json(orderBook);
 };

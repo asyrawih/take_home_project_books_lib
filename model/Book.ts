@@ -26,3 +26,9 @@ export type Subject = {
   name: string;
   count: number;
 };
+
+export type BookOrder = {
+  customer: string;
+  books: Book[];
+  schedule_pickup: Date;
+};

@@ -1,11 +1,7 @@
 import axios from "axios";
-import { Request, Response } from "express";
-import { Book, BookResponse } from "../model/Book";
+import { BookResponse } from "../model/Book";
 
-export const GetBook = async (
-  _: Request,
-  res: Response
-): Promise<BookResponse> => {
+export const GetBook = async (): Promise<BookResponse> => {
   const request = await axios.get<BookResponse>(
     "https://openlibrary.org/subjects/love.json?details=true"
   );

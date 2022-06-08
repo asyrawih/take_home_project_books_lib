@@ -1,5 +1,8 @@
-import { Book } from "../model/Book";
+import { Book, BookOrder } from "../model/Book";
 
-export const orderBooks = (book: Book) => {
-  //TODO: Will be contain order book logic
+// Take The Book
+export const orderBooks = (book: BookOrder): Book[] => {
+  // Process Order in here
+  // In Case Just Return The Data And Adding into Array
+  return book.books;
 };
