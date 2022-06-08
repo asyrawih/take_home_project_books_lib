@@ -13,7 +13,7 @@ export type Book = {
   cover_id: number;
   cover_edition_key: string;
   subject: string[];
-  author: Author[];
+  authors: Author[];
 };
 
 export type Author = {

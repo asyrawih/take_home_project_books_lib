@@ -17,7 +17,7 @@ export const book = async (req: Request, res: Response) => {
       cover_id: book.cover_id,
       cover_key: book.cover_edition_key,
       cover_image: `https://covers.openlibrary.org/b/olid/${book.cover_edition_key}-M.jpg`,
-      author: book.author,
+      author: book.authors,
     };
   });
 
@@ -42,7 +42,7 @@ export const orderBook = async (req: Request, res: Response) => {
       key: order.key,
       title: order.title,
       cover_id: order.cover_id,
-      author: order.author,
+      authors: order.authors,
       subject: order.subject,
       cover_edition_key: order.cover_edition_key,
     });
